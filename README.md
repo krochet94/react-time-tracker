@@ -1,6 +1,7 @@
 # React Time Tracker
 > _Track your activities_
  Simple Time Tracker App build with React, Firebase and Mui
+try demo [click here](https://time-tracker-react-278d0.web.app/).
 
 # Features
 Authentication
