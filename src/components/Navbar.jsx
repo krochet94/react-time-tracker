@@ -5,9 +5,8 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../firebase-config';
 
 const Navbar = () => {
-    console.log(auth);
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, minWidth: '350px' }}>
       <AppBar position="static" style={{backgroundColor: '#102E44'}}>
         <Toolbar>
           <IconButton
