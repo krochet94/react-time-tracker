@@ -11,16 +11,18 @@ const Footer = ({tracker}) => {
         window.alert('Email copied to clipboard');
     };
     return (
-        <Grid container style={{ 
+        <Grid
+            container
+            style={{ 
             display: 'flex',
-            flexDirection: 'row',
             justifyContent: 'space-between',
             padding: 50,
             color: tracker ? '#102E44' : 'whitesmoke',
             flexWrap: 'wrap',
             alignItems: 'center'
-            
-        }}>
+            }}
+            sx={{flexDirection: {xs: 'column', md: 'row'}}}
+        >
             <Typography>Created by: <strong>Carl Aragoncillo</strong></Typography>
             <List style={{fontSize: '20px', display: 'inline', alignItems: 'center', justifyContent: 'center'}}>
                 <Link href="https://www.linkedin.com/in/krochet94" target="_blank" rel="noopener noreferrer" style={{display: 'inline', marginLeft: 5, marginRight: 5}}>

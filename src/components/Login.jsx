@@ -63,8 +63,8 @@ const Login = ({ provider, fullLoading }) => {
                 <Grid item xs={12} className={classes.gridContainer}>
                     <img src={HomeLogo} alt="Home Logo" style={{ maxWidth: '70vw', minWidth: '350px' }}></img>
                 </Grid>
-                <Grid item xs={12} className={classes.gridContainer}>
-                    <Typography variant="h6" color="whitesmoke">"A Simple Time Tracking App using React.js, Firebase and MUI"</Typography>
+                <Grid item xs={12} className={classes.gridContainer} style={{paddingRight: 20, paddingLeft: 20}}>
+                    <Typography variant="h6" color="whitesmoke" minWidth="350px" align="center">"A Simple Time Tracking App using React.js, Firebase and MUI"</Typography>
                 </Grid>
                 <Grid item xs={12} className={classes.gridContainer}>
                     {loading ? <CircularProgress />: (
@@ -74,7 +74,7 @@ const Login = ({ provider, fullLoading }) => {
                     )}
                 </Grid>
                 <Footer />
-                <Snackbar
+                <Snackbar   
                     open={error}
                     autoHideDuration={3000}
                     onClose={() => setError(false)}
