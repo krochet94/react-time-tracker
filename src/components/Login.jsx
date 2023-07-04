@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
-import { Grid, Button, Snackbar, CircularProgress } from '@mui/material';
+import { Grid, Button, Snackbar, CircularProgress, Typography } from '@mui/material';
 import { Google } from '@mui/icons-material';
 import { makeStyles } from '@mui/styles';
 import HomeLogo from '../time-tracker-logo.png'
 import { signInWithPopup } from 'firebase/auth';
 import { auth } from '../firebase-config';
 import Loading from './Loading';
+import Footer from './Footer';
 
 const useStyles = makeStyles({
     container: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '100vh',
+        width: '100vw',
         minHeight: '100vh',
         minWidth: '350px',
         backgroundColor: '#102E44',
-        padding: '20px',
+        marginRight: 'auto',
+        marginLeft: 'auto'
+
     },
     gridContainer: {
         display: 'flex',
@@ -51,10 +54,17 @@ const Login = ({ provider, fullLoading }) => {
 
     return (
         <>
-        {fullLoading ? <Loading /> : (
-            <Grid container className={classes.container}>
+        {fullLoading ?  (
+            <Grid container maxWidth="md" className={classes.container}>
+                <Loading />
+            </Grid>
+        ) : (
+            <Grid container maxWidth="md" className={classes.container}>
                 <Grid item xs={12} className={classes.gridContainer}>
                     <img src={HomeLogo} alt="Home Logo" style={{ maxWidth: '70vw', minWidth: '350px' }}></img>
+                </Grid>
+                <Grid item xs={12} className={classes.gridContainer}>
+                    <Typography variant="h6" color="whitesmoke">"A Simple Time Tracking App using React.js, Firebase and MUI"</Typography>
                 </Grid>
                 <Grid item xs={12} className={classes.gridContainer}>
                     {loading ? <CircularProgress />: (
@@ -63,6 +73,7 @@ const Login = ({ provider, fullLoading }) => {
                     </Button>
                     )}
                 </Grid>
+                <Footer />
                 <Snackbar
                     open={error}
                     autoHideDuration={3000}

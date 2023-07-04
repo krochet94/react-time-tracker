@@ -6,7 +6,7 @@ import { auth } from '../firebase-config';
 
 const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1, minWidth: '350px' }}>
+    <Box sx={{ flexGrow: 1, minWidth: '450px' }}>
       <AppBar position="static" style={{backgroundColor: '#102E44'}}>
         <Toolbar>
           <IconButton

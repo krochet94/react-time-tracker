@@ -6,6 +6,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import StopIcon from '@mui/icons-material/Stop';
 import { query, getDocs, collection, addDoc, doc, deleteDoc } from 'firebase/firestore';
 import { db, auth } from '../firebase-config';
+import Footer from './Footer';
 
 const useStyles = makeStyles({
     container: {
@@ -13,11 +14,12 @@ const useStyles = makeStyles({
         flexDirection: 'column',
         justifyContent: 'center',
         width: '100vh',
-        minWidth: '350px',
+        minWidth: '450px',
         paddingTop: '50px',
         paddingLeft: '10vw',
         paddingRight: '10vw',
-        spacing: 2
+        spacing: 2,
+        height: '100vh'
     },
     gridContainer: {
         display: 'flex',
@@ -360,8 +362,8 @@ const TimeTracker = () => {
                 );
             })}
             </>
-        )}
-       
+        )} 
+       <Footer tracker />
       <Modal open={openModal} onClose={() => setOpenModal(false)}>
         <Box className={classes.modal}>
           <Grid container spacing={3}>

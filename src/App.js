@@ -18,11 +18,9 @@ function App() {
   }, [user]);
 
   return (
-    <div className="App">
-      <section>
+    <div className="App" style={{backgroundColor: user ? '#B2FCFB' : '#102E44'}}>
         {/* shows the login page when user is not logged in and the main page when already logged in */}
         {user ? <Main /> : <Login provider={provider} fullLoading={fullLoading} />}
-      </section>
     </div>
   );
 }
